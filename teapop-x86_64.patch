@@ -1,0 +1,18 @@
+--- teapop-0.3.8/config/configure.in~	2003-11-26 14:34:52.000000000 +0000
++++ teapop-0.3.8/config/configure.in	2004-04-14 07:16:29.751570480 +0000
+@@ -224,6 +224,7 @@
+ 	test -f $db_pgsql/lib/libpq.a && pgsql_ldflags=$db_pgsql/lib
+ 	test -f $db_pgsql/pgsql/lib/libpq.a && pgsql_ldflags=$db_pgsql/pgsql/lib
+ 	test -f $db_pgsql/lib/pgsql/libpq.a && pgsql_ldflags=$db_pgsql/lib/pgsql
++	test -f $db_pgsql/lib64/libpq.a && pgsql_ldflags=$db_pgsql/lib64
+ 	if test "$pgsql_ldflags" = ""; then
+ 		AC_MSG_ERROR([can't find PostgreSQL library directory])
+ 	fi
+@@ -255,6 +256,7 @@
+ 	test -f $db_mysql/lib/libmysqlclient.a && mysql_ldflags=$db_mysql/lib
+ 	test -f $db_mysql/mysql/lib/libmysqlclient.a && mysql_ldflags=$db_mysql/mysql/lib
+ 	test -f $db_mysql/lib/mysql/libmysqlclient.a && mysql_ldflags=$db_mysql/lib/mysql
++	test -f $db_mysql/lib64/libmysqlclient.a && mysql_ldflags=$db_mysql/lib64
+ 	if test "$mysql_ldflags" = ""; then
+ 		AC_MSG_ERROR([can't find MySQL library directory])
+ 	fi
