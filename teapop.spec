@@ -40,13 +40,13 @@ POP3.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT{%{_sysconfdir}/sysconfig/rc-inetd,%{_sbindir},%{_mandir}/man8}
+install -d $RPM_BUILD_ROOT{/etc/sysconfig/rc-inetd,%{_sbindir},%{_mandir}/man8}
 
 install teapop/teapop		$RPM_BUILD_ROOT%{_sbindir}
 install man/teapop.8		$RPM_BUILD_ROOT%{_mandir}/man8
 install etc/teapop.passwd	$RPM_BUILD_ROOT%{_sysconfdir}/teapop.passwd
 
-install %{SOURCE1}		$RPM_BUILD_ROOT%{_sysconfdir}/sysconfig/rc-inetd/teapop
+install %{SOURCE1}		$RPM_BUILD_ROOT/etc/sysconfig/rc-inetd/teapop
 
 tar czf contrib.tar.gz contrib/*
 
@@ -69,6 +69,6 @@ fi
 %defattr(644,root,root,755)
 %doc doc/{TODO,ChangeLog} contrib.tar.gz
 %attr(755,root,root) %{_sbindir}/teapop
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/sysconfig/rc-inetd/teapop
+%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) /etc/sysconfig/rc-inetd/teapop
 %attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/teapop.passwd
 %{_mandir}/man8/*
