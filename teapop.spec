@@ -13,8 +13,8 @@ Group:		Networking/Daemons
 Source0:	http://www.toontown.org/pub/teapop/%{name}-%{version}.tar.gz
 # Source0-md5:	0e67030968e48e4307df854d433cc6f4
 Source1:	%{name}.inetd
-%{?_with_mysql:BuildRequires: mysql-devel}
-%{!?_without_pgsql:BuildRequires: postgresql-devel}
+%{?_with_mysql:BuildRequires:	mysql-devel}
+%{!?_without_pgsql:BuildRequires:	postgresql-devel}
 URL:		http://www.toontown.org/teapop/
 Prereq:		rc-inetd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -39,8 +39,8 @@ rm -f configure
 %configure \
 	--enable-flock \
 	--enable-extra-dividers=:%! \
-        %{?_with_mysql:--with-mysql=/usr} \
-        %{!?_without_pgsql:--with-pgsql=/usr}
+	%{?_with_mysql:--with-mysql=/usr} \
+	%{!?_without_pgsql:--with-pgsql=/usr}
 cd ..
 %{__make}
 
