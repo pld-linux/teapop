@@ -16,6 +16,7 @@ Group:		Networking/Daemons
 Source0:	http://www.toontown.org/pub/teapop/%{name}-%{version}.tar.gz
 # Source0-md5:	c322c20018663a1a9b7860966cbd4ed2
 Source1:	%{name}.inetd
+Patch0:		%{name}-x86_64.patch
 URL:		http://www.toontown.org/teapop/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -39,6 +40,7 @@ serwerów POP3.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 cp -f /usr/share/automake/config.sub config
