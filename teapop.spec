@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Networking/Daemons
 Source0:	http://www.toontown.org/pub/teapop/%{name}-%{version}.tar.gz
+# Source0-md5:	65fdea12d76c1ed45d65689f48f7f994
 Source1:	%{name}.inetd
 Patch0:		%{name}-configure.patch
 %{?_with_mysql:BuildRequires: mysql-devel}
