@@ -1,5 +1,5 @@
 --- teapop-0.3.8/config/configure.in~	2003-11-26 14:34:52.000000000 +0000
-+++ teapop-0.3.8/config/configure.in	2004-04-14 07:16:29.751570480 +0000
++++ teapop-0.3.8/config/configure.in	2004-04-14 07:30:43.900720072 +0000
 @@ -224,6 +224,7 @@
  	test -f $db_pgsql/lib/libpq.a && pgsql_ldflags=$db_pgsql/lib
  	test -f $db_pgsql/pgsql/lib/libpq.a && pgsql_ldflags=$db_pgsql/pgsql/lib
@@ -16,3 +16,11 @@
  	if test "$mysql_ldflags" = ""; then
  		AC_MSG_ERROR([can't find MySQL library directory])
  	fi
+@@ -316,6 +318,7 @@
+ 	test -f /usr/lib/libwhoson.a && whoson_ldflags=/usr/lib
+ 	test -f /usr/local/lib/libwhoson.a && whoson_ldflags=/usr/local/lib
+ 	test -f $whoson/libwhoson.a && whoson_ldflags=$whoson
++	test -f /usr/lib64/libwhoson.a && whoson_ldflags=/usr/lib64
+ 
+ 	if test "$whoson_ldflags" = ""; then
+ 		AC_MSG_ERROR([can't find libwhoson.a])
