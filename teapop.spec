@@ -33,8 +33,8 @@ POP3-servers.
 
 %description -l pl
 Teapop to jeszcze jeden serwer POP3 zgodny z RFC 1939. Elastyczna
-obs³uga wirtualnych domen jest tym, co ró¿ni Teapop od innych serwerów
-POP3.
+obs³uga wirtualnych domen jest tym, co odró¿nia Teapop od innych
+serwerów POP3.
 
 %prep
 %setup -q
