@@ -1,14 +1,18 @@
+#
+# Conditional build:
+# _with_mysql		enable mySQL support
+# _without_pgsql	disable PostreSQL support
+# 
 Summary:	Teapop is a POP3-server with flexible virtual domain support
 Summary(pl):	Serwer POP3 ze wsparciem dla wirtualnych domen
 Name:		teapop
-Version:	0.3.5
+Version:	0.3.7
 Release:	1
 License:	GPL
 Group:		Networking/Daemons
 Source0:	http://www.toontown.org/pub/teapop/%{name}-%{version}.tar.gz
-# Source0-md5:	65fdea12d76c1ed45d65689f48f7f994
+# Source0-md5:	0e67030968e48e4307df854d433cc6f4
 Source1:	%{name}.inetd
-Patch0:		%{name}-configure.patch
 %{?_with_mysql:BuildRequires: mysql-devel}
 %{!?_without_pgsql:BuildRequires: postgresql-devel}
 URL:		http://www.toontown.org/teapop/
@@ -27,15 +31,17 @@ POP3.
 
 %prep
 %setup -q
-#%patch0 -p1
-%build
 
-(cd config; rm -f configure; autoconf)
-%configure2_13  \
+%build
+cd config
+rm -f configure
+%{__autoconf}
+%configure \
 	--enable-flock \
 	--enable-extra-dividers=:%! \
         %{?_with_mysql:--with-mysql=/usr} \
         %{!?_without_pgsql:--with-pgsql=/usr}
+cd ..
 %{__make}
 
 %install
