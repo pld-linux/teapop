@@ -2,7 +2,7 @@
 # Conditional build:
 # _with_mysql		enable mySQL support
 # _without_pgsql	disable PostreSQL support
-# 
+#
 Summary:	Teapop is a POP3-server with flexible virtual domain support
 Summary(pl):	Serwer POP3 ze wsparciem dla wirtualnych domen
 Name:		teapop
