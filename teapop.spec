@@ -1,6 +1,6 @@
 Summary:	Teapop is a RFC1939 compliant POP3-server, with flexible virtual domain support 
 Name:		teapop
-Version:	0.3.2
+Version:	0.3.3
 Release:	1
 License:	GPL
 Group:		Networking/Daemons
