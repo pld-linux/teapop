@@ -2,17 +2,18 @@ Summary:	Teapop is a RFC1939 compliant POP3-server, with flexible virtual domain
 Name:		teapop
 Version:	0.27
 Release:	1
+License:	GPL
 Group:		Networking/Daemons
 Group(de):	Netzwerkwesen/Server
 Group(pl):	Sieciowe/Serwery
-License:	GPL
-Source0:	http://http://www.toontown.org/pub/teapop/%{name}-%{version}.tar.gz
+Source0:	http://www.toontown.org/pub/teapop/%{name}-%{version}.tar.gz
 Source1:	%{name}.inetd
 Patch0:		%{name}-configure.patch
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %{?bcond_on_mysql:BuildRequires: mysql-devel}
 %{!?bcond_off_pgsql:BuildRequires: postgresql-devel}
-
+URL:		http://www.toontown.org/teapop/
+Prereq:		rc-inetd
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Teapop is yet another RFC1939 compliant POP3-server. The flexible
