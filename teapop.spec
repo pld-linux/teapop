@@ -41,7 +41,7 @@ serwerów POP3.
 %setup -q
 
 %build
-cp /usr/share/automake/config.sub .
+cp /usr/share/automake/config.sub config/
 cd config
 sed -i -e 's#\.a#\.so#g' configure.in
 rm -f configure
