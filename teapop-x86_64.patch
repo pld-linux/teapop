@@ -24,3 +24,11 @@
  
  	if test "$whoson_ldflags" = ""; then
  		AC_MSG_ERROR([can't find libwhoson.a])
+@@ -453,6 +453,7 @@
+ 		test -f /usr/lib/libldap.so && ldap_ldflags=/usr/lib
+ 		test -f /usr/local/lib/libldap.so && ldap_ldflags=/usr/local/lib
+ 		test -f $ldaplib/libldap.so && ldap_ldflags=$ldaplib
++		test -f /usr/lib64/libldap.so && ldap_ldflags=/usr/lib64
+ 		LIBS="$LIBS -lldap -llber"
+ 		;;
+ 	esac
