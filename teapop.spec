@@ -1,6 +1,6 @@
 Summary:	Teapop is a RFC1939 compliant POP3-server, with flexible virtual domain support 
 Name:		teapop
-Version:	0.28
+Version:	0.3.2
 Release:	1
 License:	GPL
 Group:		Networking/Daemons
@@ -23,10 +23,11 @@ POP3-servers.
 
 %prep
 %setup -q
-%patch0 -p1
+#%patch0 -p1
 %build
-(cd config; autoconf)
-%configure  \
+
+(cd config; rm -f configure; autoconf)
+%configure2_13  \
 	--enable-flock \
 	--enable-extra-dividers=:%! \
         %{?_with_mysql:--with-mysql=/usr} \
@@ -45,6 +46,7 @@ install etc/teapop.passwd	$RPM_BUILD_ROOT%{_sysconfdir}/teapop.passwd
 install %{SOURCE1}		$RPM_BUILD_ROOT%{_sysconfdir}/sysconfig/rc-inetd/teapop
 
 gzip -9nf doc/{TODO,ChangeLog}
+tar czf contrib.tar.gz contrib/*
 
 %post
 if [ -f /var/lock/subsys/rc-inetd ]; then
@@ -63,7 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc/{TODO,ChangeLog}.gz
+%doc doc/{TODO,ChangeLog}.gz contrib.tar.gz
 %attr(755,root,root) %{_sbindir}/teapop
 %attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/sysconfig/rc-inetd/teapop
 %attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/teapop.passwd
