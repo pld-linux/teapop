@@ -48,7 +48,6 @@ install etc/teapop.passwd	$RPM_BUILD_ROOT%{_sysconfdir}/teapop.passwd
 
 install %{SOURCE1}		$RPM_BUILD_ROOT%{_sysconfdir}/sysconfig/rc-inetd/teapop
 
-gzip -9nf doc/{TODO,ChangeLog}
 tar czf contrib.tar.gz contrib/*
 
 %clean
@@ -68,7 +67,7 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc doc/{TODO,ChangeLog}.gz contrib.tar.gz
+%doc doc/{TODO,ChangeLog} contrib.tar.gz
 %attr(755,root,root) %{_sbindir}/teapop
 %attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/sysconfig/rc-inetd/teapop
 %attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/teapop.passwd
