@@ -19,8 +19,9 @@ Source1:	%{name}.inetd
 URL:		http://www.toontown.org/teapop/
 BuildRequires:	autoconf
 %{?with_mysql:BuildRequires:	mysql-devel}
-%{?with_pgsql:BuildRequires:	postgresql-devel}
 %{?with_ldap:BuildRequires:	openldap-devel}
+%{?with_pgsql:BuildRequires:	postgresql-devel}
+BuildRequires:	sed >= 4.0
 %{?with_whoson:BuildRequires:	whoson-devel}
 Prereq:		rc-inetd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
