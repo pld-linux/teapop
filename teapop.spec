@@ -1,4 +1,5 @@
-Summary:	Teapop is a RFC1939 compliant POP3-server, with flexible virtual domain support 
+Summary:	Teapop is a POP3-server with flexible virtual domain support
+Summary(pl):	Serwer POP3 ze wsparciem dla wirtualnych domen
 Name:		teapop
 Version:	0.3.3
 Release:	1
@@ -20,6 +21,10 @@ Teapop is yet another RFC1939 compliant POP3-server. The flexible
 virtual domain support is what distinguish Teapop from all other
 POP3-servers.
 
+%description -l pl
+Teapop to jeszcze jeden serwer POP3 zgodny z RFC 1939. Elastyczna
+obs³uga wirtualnych domen jest tym, co ró¿ni Teapop od innych serwerów
+POP3.
 
 %prep
 %setup -q
@@ -48,6 +53,9 @@ install %{SOURCE1}		$RPM_BUILD_ROOT%{_sysconfdir}/sysconfig/rc-inetd/teapop
 gzip -9nf doc/{TODO,ChangeLog}
 tar czf contrib.tar.gz contrib/*
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %post
 if [ -f /var/lock/subsys/rc-inetd ]; then
 	/etc/rc.d/init.d/rc-inetd reload 1>&2
@@ -59,9 +67,6 @@ fi
 if [ -f /var/lock/subsys/rc-inetd ]; then
 	/etc/rc.d/init.d/rc-inetd reload 1>&2
 fi
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
