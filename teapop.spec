@@ -18,6 +18,7 @@ Source0:	http://www.toontown.org/pub/teapop/%{name}-%{version}.tar.gz
 Source1:	%{name}.inetd
 URL:		http://www.toontown.org/teapop/
 BuildRequires:	autoconf
+BuildRequires:	automake
 %{?with_mysql:BuildRequires:	mysql-devel}
 %{?with_ldap:BuildRequires:	openldap-devel}
 %{?with_pgsql:BuildRequires:	postgresql-devel}
