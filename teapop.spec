@@ -9,8 +9,8 @@ Group(pl):	Sieciowe/Serwery
 Source0:	http://www.toontown.org/pub/teapop/%{name}-%{version}.tar.gz
 Source1:	%{name}.inetd
 Patch0:		%{name}-configure.patch
-%{?bcond_on_mysql:BuildRequires: mysql-devel}
-%{!?bcond_off_pgsql:BuildRequires: postgresql-devel}
+%{?_with_mysql:BuildRequires: mysql-devel}
+%{!?_without_pgsql:BuildRequires: postgresql-devel}
 URL:		http://www.toontown.org/teapop/
 Prereq:		rc-inetd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -29,8 +29,8 @@ POP3-servers.
 %configure  \
 	--enable-flock \
 	--enable-extra-dividers=:%! \
-        %{?bcond_on_mysql:--with-mysql=/usr} \
-        %{!?bcond_off_pgsql:--with-pgsql=/usr}
+        %{?_with_mysql:--with-mysql=/usr} \
+        %{!?_without_pgsql:--with-pgsql=/usr}
 %{__make}
 
 %install
