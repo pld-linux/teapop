@@ -90,6 +90,6 @@ fi
 %defattr(644,root,root,755)
 %doc doc/{TODO,ChangeLog} contrib.tar.gz
 %attr(755,root,root) %{_sbindir}/teapop
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) /etc/sysconfig/rc-inetd/teapop
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/teapop.passwd
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/rc-inetd/teapop
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/teapop.passwd
 %{_mandir}/man8/*
