@@ -1,0 +1,10 @@
+--- teapop-0.3.8/teapop/pop_ldap.c~	2003-08-04 17:33:49.000000000 +0200
++++ teapop-0.3.8/teapop/pop_ldap.c	2006-01-18 01:04:55.000000000 +0100
+@@ -47,6 +47,7 @@
+ #include <stdlib.h>
+ #include <unistd.h>
+ 
++#define LDAP_DEPRECATED 1
+ #include <ldap.h>
+ 
+ #include "teapop.h"
