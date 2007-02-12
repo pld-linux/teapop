@@ -7,7 +7,7 @@
 %bcond_without	ipv6	# disable IPv6 support
 #
 Summary:	Teapop is a POP3-server with flexible virtual domain support
-Summary(pl.UTF-8):   Serwer POP3 ze wsparciem dla wirtualnych domen
+Summary(pl.UTF-8):	Serwer POP3 ze wsparciem dla wirtualnych domen
 Name:		teapop
 Version:	0.3.8
 Release:	11
