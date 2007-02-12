@@ -7,7 +7,7 @@
 %bcond_without	ipv6	# disable IPv6 support
 #
 Summary:	Teapop is a POP3-server with flexible virtual domain support
-Summary(pl):	Serwer POP3 ze wsparciem dla wirtualnych domen
+Summary(pl.UTF-8):   Serwer POP3 ze wsparciem dla wirtualnych domen
 Name:		teapop
 Version:	0.3.8
 Release:	11
@@ -34,10 +34,10 @@ Teapop is yet another RFC1939 compliant POP3-server. The flexible
 virtual domain support is what distinguish Teapop from all other
 POP3-servers.
 
-%description -l pl
+%description -l pl.UTF-8
 Teapop to jeszcze jeden serwer POP3 zgodny z RFC 1939. Elastyczna
-obs³uga wirtualnych domen jest tym, co odró¿nia Teapop od innych
-serwerów POP3.
+obsÅ‚uga wirtualnych domen jest tym, co odrÃ³Å¼nia Teapop od innych
+serwerÃ³w POP3.
 
 %prep
 %setup -q
