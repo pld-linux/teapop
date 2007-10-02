@@ -25,6 +25,7 @@ BuildRequires:	automake
 %{?with_ldap:BuildRequires:	openldap-devel >= 2.3.0}
 %{?with_pgsql:BuildRequires:	postgresql-devel}
 BuildRequires:	rpmbuild(macros) >= 1.268
+BuildRequires:	sed >= 4.0
 %{?with_whoson:BuildRequires:	whoson-devel}
 Requires:	rc-inetd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
