@@ -28,6 +28,8 @@ BuildRequires:	rpmbuild(macros) >= 1.268
 BuildRequires:	sed >= 4.0
 %{?with_whoson:BuildRequires:	whoson-devel}
 Requires:	rc-inetd
+Provides:	pop3daemon
+Obsoletes:	pop3daemon
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
