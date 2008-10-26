@@ -12,7 +12,7 @@ Name:		teapop
 Version:	0.3.8
 Release:	11
 License:	GPL
-Group:		Networking/Daemons
+Group:		Networking/Daemons/POP3
 Source0:	http://www.toontown.org/pub/teapop/%{name}-%{version}.tar.gz
 # Source0-md5:	c322c20018663a1a9b7860966cbd4ed2
 Source1:	%{name}.inetd
