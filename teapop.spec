@@ -22,7 +22,7 @@ URL:		http://www.toontown.org/teapop/
 BuildRequires:	autoconf
 BuildRequires:	automake
 %{?with_mysql:BuildRequires:	mysql-devel}
-%{?with_ldap:BuildRequires:	openldap-devel >= 2.4.6}
+%{?with_ldap:BuildRequires:	openldap-devel >= 2.3.0}
 %{?with_pgsql:BuildRequires:	postgresql-devel}
 BuildRequires:	rpmbuild(macros) >= 1.268
 BuildRequires:	sed >= 4.0
