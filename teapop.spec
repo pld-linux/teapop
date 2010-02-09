@@ -10,7 +10,7 @@ Summary:	Teapop is a POP3-server with flexible virtual domain support
 Summary(pl.UTF-8):	Serwer POP3 ze wsparciem dla wirtualnych domen
 Name:		teapop
 Version:	0.3.8
-Release:	11
+Release:	12
 License:	GPL
 Group:		Networking/Daemons/POP3
 Source0:	http://www.toontown.org/pub/teapop/%{name}-%{version}.tar.gz
